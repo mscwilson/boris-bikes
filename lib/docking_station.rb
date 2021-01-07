@@ -1,8 +1,8 @@
 require './lib/bike.rb'
 
 class DockingStation
+  DEFAULT_CAPACITY = 20
   def initialize
-    @capacity = 20
     @bikes = Array.new
   end
   def release_bike
@@ -16,7 +16,7 @@ class DockingStation
   attr_reader :bike
   private
   def full?
-    @bikes.count == @capacity
+    @bikes.count == DEFAULT_CAPACITY
   end
   def empty?
     @bikes.empty?
