@@ -1,18 +1,24 @@
 require './lib/bike.rb'
 
 class DockingStation
-  @capacity = 20
-  
   def initialize
+    @capacity = 20
     @bikes = Array.new
   end
   def release_bike
-    raise Exception.new "No bikes available!" if @bikes.empty?
+    raise "No bikes available!" if empty?
     return @bikes.pop  
   end
   def dock(bike)
-    raise Exception.new "Bikes cannot be docked - station is full!" if @bikes.count == @capacity
+    raise "Bikes cannot be docked - station is full!" if full?
     return @bikes.push(bike)
   end
   attr_reader :bike
+  private
+  def full?
+    @bikes.count == @capacity
+  end
+  def empty?
+    @bikes.empty?
+  end
 end
