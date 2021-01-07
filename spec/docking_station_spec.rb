@@ -8,6 +8,11 @@ describe DockingStation do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
 
+  it "docks something" do
+    subject.dock(Bike.new)
+    expect(subject.bikes.count).to eq 1
+  end
+
   it "releases working bikes" do
     bike = Bike.new
     subject.dock(bike)
