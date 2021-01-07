@@ -21,6 +21,12 @@ describe DockingStation do
     expect(subject.bike).to eq bike
   end
 
+  it "bikes cannot be docked as station is full" do
+    bike = Bike.new
+    subject.dock(bike)
+    expect { subject.dock(bike) }.to raise_error("Bikes cannot be docked - station is full!")
+  end
+
   it "no bikes available" do
     expect { subject.release_bike }.to raise_error("No bikes available!")
   end
