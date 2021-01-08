@@ -17,7 +17,7 @@ class DockingStation
     return bikes.pop
   end
 
-  def dock(bike, not_working = false)
+  def dock(bike, not_working = bike.broken)
     raise "Bikes cannot be docked - station is full!" if full?
     bike.broken = not_working
     return bikes.push(bike)
