@@ -2,7 +2,7 @@ require 'docking_station'
 
 # In spec/docking_station_spec.rb
 describe DockingStation do
- 
+
   it 'has a default capacity' do
     expect(subject.capacity).to eq DockingStation::DEFAULT_CAPACITY
   end
@@ -10,6 +10,14 @@ describe DockingStation do
   describe "#release_bike" do
 
     it {should respond_to(:release_bike) }
+
+    it "release working bike even if stored first" do
+      bike1 = Bike.new
+      bike2 = Bike.new
+      subject.dock(bike1)
+      subject.dock(bike2, true)
+      expect(subject.release_bike).to eq bike1
+    end
 
     it "doesn't release broken bike" do
       bike = Bike.new
@@ -26,7 +34,7 @@ describe DockingStation do
     it "no bikes available" do
       expect { subject.release_bike }.to raise_error("No bikes available!")
     end
-    
+
     it "releases working bikes" do
       bike = Bike.new
       subject.dock(bike)
