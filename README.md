@@ -1,4 +1,5 @@
-##Boris Bikes Challenge
+Boris Bikes Challenge
+--
 
 The main cycle hire scheme in London is commonly known as "Boris Bikes", after Boris Johnson who was mayor when the scheme opened (it wasn't actually his idea). In this repo, we were challenged to create a bike hire system as a way to learn TDD.
 
