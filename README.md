@@ -5,7 +5,7 @@ The main cycle hire scheme in London, Santander Cycles, is commonly known as "Bo
 
 ### Goal
 
-The code is centred around Bikes and DockingStations. The Bike objects are stored in DockingStation objects. Users can take bikes out if one is available, dock bikes, report broken bikes (which can't then be released), and the docking stations have a set capacity.
+The code is centred around Bikes and DockingStations. The Bike objects are stored in DockingStation objects. Users can take bikes out if one is available, dock bikes, report broken bikes (which can't then be released once docked), and the docking stations have a set capacity.
 
 The majority of this repo was written using alternating pair programming. The contributors were: [PetarSimonovic](https://github.com/PetarSimonovic) and [Reeshul](https://github.com/Reeshul), [Reeshul](https://github.com/Reeshul) and [HamishArro](https://github.com/HamishArro), and [HamishArro](https://github.com/HamishArro) and I.
 
@@ -15,7 +15,10 @@ To try out the project:
 * Make sure Ruby and rspec are installed
 * Clone this repo
 * Navigate into the cloned folder
-* Run `irb -r ./lib/dockingstation`
+* Run `irb -r ./lib/docking_station`
 * Play with the code in the IRB REPL
 * To run the tests, exit from irb
 * Run `rspec`
+
+Here's a screenshot of the code in action:
+![boris bikes in irb](boris-bikes.png)
