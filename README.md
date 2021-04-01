@@ -15,7 +15,7 @@ To try out the project:
 * Make sure Ruby and rspec are installed
 * Clone this repo
 * Navigate into the cloned folder
-* Run 'irb -r ./lib/dockingstation'
+* Run `irb -r ./lib/dockingstation`
 * Play with the code in the IRB REPL
 * To run the tests, exit from irb
-* Run 'rspec'
+* Run `rspec`
